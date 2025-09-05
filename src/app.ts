@@ -1,7 +1,8 @@
 import dotenv from "dotenv";
-dotenv.config({
-  path: process.env.NODE_ENV === "development" ? ".env" : ".env.prod",
-});
+
+if (process.env.NODE_ENV === "development") {
+  dotenv.config({ path: ".env" });
+}
 
 import express, { Router } from "express";
 

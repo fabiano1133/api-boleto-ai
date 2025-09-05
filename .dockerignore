@@ -3,7 +3,11 @@ dist
 build
 *.log
 .env
+.env.prod
 .git
 .gitignore
 Dockerfile*
 .dockerignore
+coverage
+.vscode
+*.md
