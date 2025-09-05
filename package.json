@@ -1,0 +1,44 @@
+{
+  "name": "api-boleto-ai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "cross-env NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "docker-build": "docker build --no-cache -t boleto-ai-api .",
+    "docker-run": "docker run -p 8080:8080 --env-file .env boleto-ai-api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.2.0",
+    "cross-env": "^10.0.0",
+    "esbuild": "^0.25.9",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "groq-sdk": "^0.30.0",
+    "hexoid": "^2.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.18.0",
+    "mongodb-paginate": "^1.4.0",
+    "node-cron": "^4.2.1",
+    "openai": "^5.12.2"
+  }
+}
